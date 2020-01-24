@@ -751,7 +751,6 @@ if (N>0.) then
   ! if(ij==1) write(1,*) gammaC,dH,dHc,npp,wf_STKG,par_vf,W_froot,par_vr,theta,W_wsap,par_z,W_froot,W_c,W_branch,betaC
   ! if(ij==2) write(2,*) gammaC,dH,dHc,npp,wf_STKG,par_vf,W_froot,par_vr,theta,W_wsap,par_z,W_froot, W_c, W_branch, betaC 
   ! if(ij==3) write(3,*) gammaC,dH,dHc,npp,wf_STKG,par_vf,W_froot,par_vr,theta,W_wsap,par_z,W_froot, W_c, W_branch, betaC
-		
 if(time==1)then
       dHcCum = 0.
       dHCum = 0.
