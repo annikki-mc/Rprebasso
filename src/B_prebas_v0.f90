@@ -652,7 +652,8 @@ if (N>0.) then
 !  par_mw = par_mw0 * p0 / p0_ref
 
   par_H0 = par_H0max * (1 - exp(-par_kH * ETS/par_alfar)) !!!new version
-  theta = par_thetaMax / (1. + exp(-(H - par_H0)/(par_H0*par_gamma)))   !!!!new version
+!  theta = par_thetaMax / (1. + exp(-(H - par_H0)/(par_H0*par_gamma)))   !!!!new version
+	theta = 0.
 
   mrFact = max(0., par_aETS * (ETS_ref-ETS)/ETS_ref) !!!new version
   par_mr = par_mr0* p0 / p0_ref + (1+par_c) * mrFact / par_vr0    !!!new version !!newX
@@ -738,6 +739,9 @@ if (N>0.) then
             ! dH = g1 * (Lc) * ((g2 - (g4 - 1.) * (H-Lc) - H) / (g3 + (g5 - 1.) * (H-Lc) + H))
 
             if(dH < 0.) dH = 0.
+			
+			theta = par_thetaMax - par_z/(H-Hc)* gammaC * dH
+			if(theta < 0.) theta = 0.
         !-----------------------------------
         !crown rise
 !         if(H - Hc > par_Cr2*100./sqrt(N)) then
